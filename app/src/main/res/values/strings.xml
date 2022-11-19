@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Hackathon2022</string>
+    <string name="unknown_error">Oops! Something went wrong</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
 </resources>

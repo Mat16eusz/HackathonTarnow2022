@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="text">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="textWhite" parent="text">
+        <item name="android:textColor">@color/whiteTextColor</item>
+    </style>
+
+    <style name="SaNormalTextWhite" parent="textWhite">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="normalLightTextWhite" parent="SaNormalTextWhite">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="textBlack" parent="text">
+        <item name="android:textColor">@color/blackTextColor</item>
+    </style>
+
+    <style name="SaNormalTextBlack" parent="textBlack">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="normalLightTextBlack" parent="SaNormalTextBlack">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+</resources>

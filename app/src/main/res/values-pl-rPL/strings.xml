@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hackathon2022</string>
+    <string name="unknown_error">Ups! Coś poszło nie tak</string>
+    <string name="yes">Tak</string>
+    <string name="no">Nie</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Anuluj</string>
+</resources>

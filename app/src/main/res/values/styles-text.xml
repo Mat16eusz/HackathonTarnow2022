@@ -9,11 +9,11 @@
         <item name="android:textColor">@color/whiteTextColor</item>
     </style>
 
-    <style name="SaNormalTextWhite" parent="textWhite">
+    <style name="normalTextWhite" parent="textWhite">
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="normalLightTextWhite" parent="SaNormalTextWhite">
+    <style name="normalLightTextWhite" parent="normalTextWhite">
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
 
@@ -21,11 +21,11 @@
         <item name="android:textColor">@color/blackTextColor</item>
     </style>
 
-    <style name="SaNormalTextBlack" parent="textBlack">
+    <style name="normalTextBlack" parent="textBlack">
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="normalLightTextBlack" parent="SaNormalTextBlack">
+    <style name="normalDarkTextBlack" parent="normalTextBlack">
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
 </resources>

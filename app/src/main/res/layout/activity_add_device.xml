@@ -26,7 +26,7 @@
                 android:layout_height="match_parent">
 
                 <Spinner
-                    android:id="@+id/devices"
+                    android:id="@+id/deviceType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -87,13 +87,13 @@
                         <CheckBox
                             android:id="@+id/checkBox1"
                             style="@style/checkBoxStyle"
+                            android:onClick="checkDay"
                             android:text="@string/monday" />
 
                         <EditText
-                            android:id="@+id/editTextNumber1"
+                            android:id="@+id/timeInput1"
                             style="@style/dayListInput"
                             android:autofillHints=""
-                            android:onClick="clean"
                             tools:ignore="LabelFor" />
 
                         <Switch
@@ -111,10 +111,11 @@
                         <CheckBox
                             android:id="@+id/checkBox2"
                             style="@style/checkBoxStyle"
+                            android:onClick="checkDay"
                             android:text="@string/tuesday" />
 
                         <EditText
-                            android:id="@+id/editTextNumber2"
+                            android:id="@+id/timeInput2"
                             style="@style/dayListInput"
                             android:autofillHints=""
                             tools:ignore="LabelFor" />
@@ -133,10 +134,11 @@
                         <CheckBox
                             android:id="@+id/checkBox3"
                             style="@style/checkBoxStyle"
+                            android:onClick="checkDay"
                             android:text="@string/wednesday" />
 
                         <EditText
-                            android:id="@+id/editTextNumber3"
+                            android:id="@+id/timeInput3"
                             style="@style/dayListInput"
                             android:autofillHints=""
                             tools:ignore="LabelFor" />
@@ -155,10 +157,11 @@
                         <CheckBox
                             android:id="@+id/checkBox4"
                             style="@style/checkBoxStyle"
+                            android:onClick="checkDay"
                             android:text="@string/thursday" />
 
                         <EditText
-                            android:id="@+id/editTextNumber4"
+                            android:id="@+id/timeInput4"
                             style="@style/dayListInput"
                             android:autofillHints=""
                             tools:ignore="LabelFor" />
@@ -177,10 +180,11 @@
                         <CheckBox
                             android:id="@+id/checkBox5"
                             style="@style/checkBoxStyle"
+                            android:onClick="checkDay"
                             android:text="@string/friday" />
 
                         <EditText
-                            android:id="@+id/editTextNumber5"
+                            android:id="@+id/timeInput5"
                             style="@style/dayListInput"
                             android:autofillHints=""
                             tools:ignore="LabelFor" />
@@ -199,10 +203,11 @@
                         <CheckBox
                             android:id="@+id/checkBox6"
                             style="@style/checkBoxStyle"
+                            android:onClick="checkDay"
                             android:text="@string/saturday" />
 
                         <EditText
-                            android:id="@+id/editTextNumber6"
+                            android:id="@+id/timeInput6"
                             style="@style/dayListInput"
                             android:autofillHints=""
                             tools:ignore="LabelFor" />
@@ -221,10 +226,11 @@
                         <CheckBox
                             android:id="@+id/checkBox7"
                             style="@style/checkBoxStyle"
+                            android:onClick="checkDay"
                             android:text="@string/sunday" />
 
                         <EditText
-                            android:id="@+id/editTextNumber7"
+                            android:id="@+id/timeInput7"
                             style="@style/dayListInput"
                             android:autofillHints=""
                             tools:ignore="LabelFor" />
@@ -254,7 +260,7 @@
                     android:text="@string/devicePower" />
 
                 <EditText
-                    android:id="@+id/nameDeviceInput"
+                    android:id="@+id/powerDeviceInput"
                     style="@style/dayListInput"
                     android:layout_weight="1"
                     android:autofillHints=""
@@ -294,14 +300,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Back" />
+                android:text="Powrót" />
 
             <Button
                 android:id="@+id/button7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Save" />
+                android:onClick="addDevice"
+                android:text="Dodaj" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -6,6 +6,12 @@
     <string name="no">Nie</string>
     <string name="ok">Ok</string>
     <string name="cancel">Anuluj</string>
+    <string name="home_name">Dom nr.1</string>
+    <string name="home_energy_use">Zużyta Energia: 666 kWh</string>
+    <string name="homes_bar">Domy</string>
+    <string name="add">Dodaj</string>
+    <string name="counters_bar">Licznik</string>
+    <string name="settings">Opcje</string>
     <string name="footer">Hackathon Tarnow 2022</string>
     <string name="add_device">Dodaj urządzenie</string>
     <string name="sleep">"Spoczynek: "</string>

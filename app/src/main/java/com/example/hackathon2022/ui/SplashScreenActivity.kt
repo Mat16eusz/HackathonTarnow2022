@@ -16,7 +16,7 @@ class SplashScreenActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash_screen)
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, HomeListActivity::class.java)
         Timer().schedule(object : TimerTask() {
             override fun run() {
                 startActivity(intent)

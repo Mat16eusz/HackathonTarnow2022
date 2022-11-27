@@ -1,5 +1,6 @@
 package com.example.hackathon2022.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.example.hackathon2022.R
@@ -13,5 +14,8 @@ class HomeListActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home_list)
+
+        /*val intent = Intent(this, HomeListActivity::class.java)
+        startActivity(intent)*/
     }
 }

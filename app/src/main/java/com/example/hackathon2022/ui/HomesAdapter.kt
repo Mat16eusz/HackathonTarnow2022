@@ -3,16 +3,19 @@ package com.example.hackathon2022.ui
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.graphics.drawable.toDrawable
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hackathon2022.R
 import com.example.hackathon2022.databinding.ItemListHomesBinding
 import com.example.hackathon2022.domain.DomainHome
 
-class HomesAdapter(
-    private val onClickItem: (item: DomainHome) -> Unit,
-) : RecyclerView.Adapter<HomesAdapter.HomesViewHolder>() {
+class HomesAdapter : RecyclerView.Adapter<HomesAdapter.HomesViewHolder>() {
+
+    private lateinit var listener: onItemClickListener
+
+    interface onItemClickListener {
+        fun onItemClick(position: Int)
+    }
 
     var context: Context? = null
     var items = mutableListOf<DomainHome>()
@@ -37,20 +40,35 @@ class HomesAdapter(
         )
         this.context = parent.context
 
-        return HomesViewHolder(binding)
+        return HomesViewHolder(binding, listener)
     }
 
     override fun onBindViewHolder(holder: HomesViewHolder, position: Int) {
         return holder.bind(items[position])
     }
 
-    inner class HomesViewHolder(private val binding: ItemListHomesBinding) :
+    inner class HomesViewHolder(
+        private val binding: ItemListHomesBinding,
+        listener: onItemClickListener,
+    ) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: DomainHome) {
             binding.homeName.text = item.homeName
-            binding.homeEnergy.text = item.usagePower.toString() + context?.getString(R.string.energy_symbol)
-            binding.iconHome.setImageDrawable(R.drawable.list_home_icon.toDrawable())
+            binding.homeEnergy.text =
+                context?.getString(R.string.home_energy_use).plus("0".plus(context?.getString(
+                    R.string.energy_symbol)))
+            binding.iconHome.setBackgroundResource(R.drawable.list_home_icon)
         }
+
+        init {
+            itemView.setOnClickListener {
+                listener.onItemClick(adapterPosition)
+            }
+        }
+    }
+
+    fun setOnItemClickListener(listener: onItemClickListener) {
+        this.listener = listener
     }
 }

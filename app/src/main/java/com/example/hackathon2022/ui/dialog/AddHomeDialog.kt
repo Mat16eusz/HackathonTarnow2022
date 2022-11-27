@@ -10,7 +10,6 @@ import com.example.hackathon2022.R
 import com.example.hackathon2022.common.base.BaseDialogFragment
 import com.example.hackathon2022.databinding.DialogAddHomeBinding
 import com.example.hackathon2022.domain.DomainHome
-import com.example.hackathon2022.ui.HomesAdapter
 import com.example.hackathon2022.utils.ScreenUtils
 
 class AddHomeDialog : BaseDialogFragment() {
@@ -21,7 +20,7 @@ class AddHomeDialog : BaseDialogFragment() {
             title: String = "",
             homeName: String = "",
             onNoClick: (() -> Unit)? = null,
-            onYesClick: (() -> Unit)? = null
+            onYesClick: ((homeName: String) -> Unit)? = null,
         ): AddHomeDialog {
             val dialog = AddHomeDialog()
             dialog.show(
@@ -38,16 +37,11 @@ class AddHomeDialog : BaseDialogFragment() {
         }
     }
 
-    private val adapter: HomesAdapter by lazy {
-        HomesAdapter(
-            onClickItem = ::addDevice
-        )
-    }
     private lateinit var binding: DialogAddHomeBinding
     private lateinit var title: String
-    private lateinit var homeName: String
+    private var homeName: String = ""
     private var onNoClick: (() -> Unit)? = null
-    private var onYesClick: (() -> Unit)? = null
+    private var onYesClick: ((homeName: String) -> Unit)? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -66,7 +60,7 @@ class AddHomeDialog : BaseDialogFragment() {
         }
 
         binding.buttonYes.setOnClickListener {
-
+            onYesClick?.let { onYesClick -> onYesClick(binding.homeName.text.toString()) }
             dismiss()
         }
 

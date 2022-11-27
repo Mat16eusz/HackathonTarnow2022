@@ -10,6 +10,7 @@ abstract class BaseDialogFragment : DialogFragment() {
 
     companion object {
         const val BASE_DIALOG = "BASE_DIALOG"
+        const val ADD_HOME_DIALOG = "ADD_HOME_DIALOG"
     }
 
     protected open val viewModel: BaseViewModel? = null

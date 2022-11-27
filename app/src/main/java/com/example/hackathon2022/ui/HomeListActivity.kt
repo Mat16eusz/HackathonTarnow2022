@@ -4,16 +4,14 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.example.hackathon2022.R
 import com.example.hackathon2022.common.base.BaseActivity
-import com.example.hackathon2022.databinding.ActivityMainBinding
+import com.example.hackathon2022.databinding.ActivityHomeListBinding
 
-class MainActivity : BaseActivity() {
+class HomeListActivity : BaseActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityHomeListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-        showInfoDialog("Test")
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_home_list)
     }
 }

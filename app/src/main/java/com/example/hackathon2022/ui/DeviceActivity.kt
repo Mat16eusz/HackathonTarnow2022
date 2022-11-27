@@ -31,6 +31,6 @@ class DeviceActivity : AppCompatActivity() {
     }
 
     private fun editParameter(item: DomainDevice) {
-
+        // TODO: Implementation
     }
 }

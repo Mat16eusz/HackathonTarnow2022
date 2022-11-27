@@ -1,4 +1,4 @@
-package com.example.hackathon2022.common.base
+package com.example.hackathon2022.ui.dialog
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -7,6 +7,7 @@ import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentManager
 import com.example.hackathon2022.R
+import com.example.hackathon2022.common.base.BaseDialogFragment
 import com.example.hackathon2022.databinding.DialogBaseBinding
 import com.example.hackathon2022.utils.ScreenUtils.Companion.getScreenWidth
 

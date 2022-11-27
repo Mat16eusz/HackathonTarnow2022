@@ -11,7 +11,7 @@ import com.example.hackathon2022.domain.DomainDevice
 
 class DeviceAdapter(
     private val onClickItem: (item: DomainDevice) -> Unit,
-) : RecyclerView.Adapter<DeviceAdapter.ProductIndexViewHolder>() {
+) : RecyclerView.Adapter<DeviceAdapter.DeviceViewHolder>() {
 
     var context: Context? = null
     var items = mutableListOf<DomainDevice>()
@@ -27,7 +27,7 @@ class DeviceAdapter(
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
-    ): ProductIndexViewHolder {
+    ): DeviceViewHolder {
         val binding = DataBindingUtil.inflate<ItemDeviceBinding>(
             LayoutInflater.from(parent.context),
             R.layout.item_device,
@@ -36,14 +36,14 @@ class DeviceAdapter(
         )
         this.context = parent.context
 
-        return ProductIndexViewHolder(binding)
+        return DeviceViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ProductIndexViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: DeviceViewHolder, position: Int) {
         return holder.bind(items[position])
     }
 
-    inner class ProductIndexViewHolder(private val binding: ItemDeviceBinding) :
+    inner class DeviceViewHolder(private val binding: ItemDeviceBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: DomainDevice) {

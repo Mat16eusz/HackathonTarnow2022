@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.example.hackathon2022.R
+import com.example.hackathon2022.ui.dialog.BaseDialog
 import com.example.hackathon2022.utils.or
 
 abstract class BaseActivity : AppCompatActivity() {

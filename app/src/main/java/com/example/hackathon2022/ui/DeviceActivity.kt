@@ -1,5 +1,6 @@
 package com.example.hackathon2022.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -12,9 +13,7 @@ class DeviceActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDeviceBinding
     private val adapter: DeviceAdapter by lazy {
-        DeviceAdapter(
-            onClickItem = ::editParameter
-        )
+        DeviceAdapter()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,12 +21,17 @@ class DeviceActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_device)
 
         binding.back.setOnClickListener {
-            // TODO: back
+            finish()
         }
 
         binding.recyclerView.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.recyclerView.adapter = adapter
+
+        binding.addDeviceButton.setOnClickListener{
+            /*val intent = Intent(this, DeviceActivity::class.java)
+            startActivity(intent)*/
+        }
     }
 
     private fun editParameter(item: DomainDevice) {

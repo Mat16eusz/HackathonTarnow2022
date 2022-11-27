@@ -16,7 +16,7 @@
     <string name="sleep">Sleep:</string>
     <string name="power">" Normal: "</string>
     <string name="wat">W</string>
-    <string name="daily_consumption">Daily</string>
+    <string name="annual_consumption">Annual</string>
     <string name="weeklyConsumption">Weekly</string>
     <string name="monthlyConsumption">Monthly</string>
     <string name="add_home">Adding home</string>

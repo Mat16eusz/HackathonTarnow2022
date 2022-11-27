@@ -9,9 +9,7 @@ import com.example.hackathon2022.R
 import com.example.hackathon2022.databinding.ItemDeviceBinding
 import com.example.hackathon2022.domain.DomainDevice
 
-class DeviceAdapter(
-    private val onClickItem: (item: DomainDevice) -> Unit,
-) : RecyclerView.Adapter<DeviceAdapter.DeviceViewHolder>() {
+class DeviceAdapter() : RecyclerView.Adapter<DeviceAdapter.DeviceViewHolder>() {
 
     var context: Context? = null
     var items = mutableListOf<DomainDevice>()

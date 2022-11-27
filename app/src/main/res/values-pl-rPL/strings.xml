@@ -17,7 +17,7 @@
     <string name="sleep">"Spoczynek: "</string>
     <string name="power">" Normalne użycie: "</string>
     <string name="wat">W</string>
-    <string name="daily_consumption">Dzienne</string>
+    <string name="annual_consumption">Roczne</string>
     <string name="weeklyConsumption">Tygodniowy</string>
     <string name="monthlyConsumption">Miesięczny</string>
     <string name="add_home">Dodaj mieszkanie</string>

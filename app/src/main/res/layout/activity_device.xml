@@ -29,40 +29,40 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/dailyConsumption"
+                android:id="@+id/weeklyConsumption"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/left_rounder_button"
-                android:text="@string/daily_consumption"
-                app:layout_constraintEnd_toStartOf="@+id/weeklyConsumption"
+                android:text="@string/weeklyConsumption"
+                app:layout_constraintEnd_toStartOf="@+id/monthlyConsumption"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/back" />
 
             <Button
-                android:id="@+id/weeklyConsumption"
+                android:id="@+id/monthlyConsumption"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@color/green_700"
-                android:text="@string/weeklyConsumption"
-                app:layout_constraintEnd_toStartOf="@+id/monthlyConsumption"
+                android:text="@string/monthlyConsumption"
+                app:layout_constraintEnd_toStartOf="@+id/annualConsumption"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/dailyConsumption"
-                app:layout_constraintTop_toTopOf="@+id/dailyConsumption" />
+                app:layout_constraintStart_toEndOf="@+id/weeklyConsumption"
+                app:layout_constraintTop_toTopOf="@+id/weeklyConsumption" />
 
             <Button
-                android:id="@+id/monthlyConsumption"
+                android:id="@+id/annualConsumption"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/right_rounder_button"
-                android:text="@string/monthlyConsumption"
+                android:text="@string/annual_consumption"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/weeklyConsumption"
-                app:layout_constraintTop_toTopOf="@+id/dailyConsumption" />
+                app:layout_constraintStart_toEndOf="@+id/monthlyConsumption"
+                app:layout_constraintTop_toTopOf="@+id/weeklyConsumption" />
 
             <TextView
                 android:id="@+id/energyConsumption"
@@ -75,7 +75,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/weeklyConsumption"
+                app:layout_constraintTop_toBottomOf="@+id/monthlyConsumption"
                 tools:text="1000 kWh" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -111,7 +111,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/topBackground" />
 
-        <Button
+        <ImageButton
             android:id="@+id/addDeviceButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

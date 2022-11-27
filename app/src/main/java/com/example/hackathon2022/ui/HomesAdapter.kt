@@ -55,11 +55,9 @@ class HomesAdapter : RecyclerView.Adapter<HomesAdapter.HomesViewHolder>() {
 
         fun bind(item: DomainHome) {
             binding.homeName.text = item.homeName
-            if (binding.homeEnergy.text.isNotEmpty() && !binding.homeEnergy.text.isNullOrEmpty()) {
-                binding.homeEnergy.text =
-                    context?.getString(R.string.home_energy_use).plus(item.usagePower.toString() + context?.getString(
-                        R.string.energy_symbol))
-            }
+            binding.homeEnergy.text =
+                context?.getString(R.string.home_energy_use).plus("0".plus(context?.getString(
+                    R.string.energy_symbol)))
             binding.iconHome.setBackgroundResource(R.drawable.list_home_icon)
         }
 

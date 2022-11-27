@@ -7,7 +7,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hackathon2022.R
 import com.example.hackathon2022.databinding.ActivityDeviceBinding
-import com.example.hackathon2022.domain.DomainDevice
 
 class DeviceActivity : AppCompatActivity() {
 
@@ -29,12 +28,8 @@ class DeviceActivity : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
 
         binding.addDeviceButton.setOnClickListener{
-            /*val intent = Intent(this, DeviceActivity::class.java)
-            startActivity(intent)*/
+            val intent = Intent(this, AddDeviceActivity::class.java)
+            startActivity(intent)
         }
-    }
-
-    private fun editParameter(item: DomainDevice) {
-        // TODO: Implementation
     }
 }

@@ -9,7 +9,7 @@
     <string name="footer">Hackathon Tarnow 2022</string>
     <string name="add_device">Dodaj urządzenie</string>
     <string name="sleep">"Spoczynek: "</string>
-    <string name="power">"Normalne użycie: "</string>
+    <string name="power">" Normalne użycie: "</string>
     <string name="wat">W</string>
     <string name="daily_consumption">Dzienne</string>
     <string name="weeklyConsumption">Tygodniowy</string>

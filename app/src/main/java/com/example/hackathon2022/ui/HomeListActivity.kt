@@ -14,10 +14,10 @@ class HomeListActivity : BaseActivity() {
 
     private lateinit var binding: ActivityHomeListBinding
     private val adapter: HomesAdapter by lazy {
-        HomesAdapter(
-            onClickItem = ::openDevice
-        )
+        HomesAdapter()
     }
+    private val home = DomainHome()
+    private var homes = mutableListOf<DomainHome>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,14 +30,20 @@ class HomeListActivity : BaseActivity() {
         binding.addHome.setOnClickListener {
             AddHomeDialog.openDialog(
                 fragmentManager = supportFragmentManager,
-                title = applicationContext.getString(R.string.add_home)
+                title = applicationContext.getString(R.string.add_home),
+                onYesClick = {
+                    home.homeName = it
+                    homes.add(home)
+
+                    adapter.items = homes
+                }
             )
         }
-        /*val intent = Intent(this, HomeListActivity::class.java)
-        startActivity(intent)*/
-    }
-
-    private fun openDevice(item: DomainHome) {
-        // TODO: Implementation
+        val intent = Intent(this, DeviceActivity::class.java)
+        adapter.setOnItemClickListener(object : HomesAdapter.onItemClickListener{
+            override fun onItemClick(position: Int) {
+                startActivity(intent)
+            }
+        })
     }
 }

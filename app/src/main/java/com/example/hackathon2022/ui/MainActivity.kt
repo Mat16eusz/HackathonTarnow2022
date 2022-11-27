@@ -1,5 +1,6 @@
 package com.example.hackathon2022.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.example.hackathon2022.R
@@ -14,6 +15,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        showInfoDialog("Test")
+        val intent = Intent(this, DeviceActivity::class.java)
+        startActivity(intent)
     }
 }

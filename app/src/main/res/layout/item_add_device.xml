@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/deviceList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundDarkBlackColor">
+
+        <ImageView
+            android:id="@+id/iconDevice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/tv_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/deviceName"
+            style="@style/normalTextGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/sleep"
+            app:layout_constraintStart_toEndOf="@+id/iconDevice"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="TV" />
+
+        <TextView
+            android:id="@+id/sleep"
+            style="@style/normalLightTextWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/deviceName"
+            app:layout_constraintTop_toBottomOf="@+id/deviceName"
+            app:layout_constraintVertical_bias="0.5"
+            tools:text="Sleep: 10W Normal: 200W"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -6,4 +6,11 @@
     <string name="ok">Ok</string>
     <string name="cancel">Cancel</string>
     <string name="footer">Hackathon Tarnow 2022</string>
+    <string name="add_device">Adding Device</string>
+    <string name="sleep">Sleep:</string>
+    <string name="power">Normal:</string>
+    <string name="wat">W</string>
+    <string name="daily_consumption">Daily</string>
+    <string name="weeklyConsumption">Weekly</string>
+    <string name="monthlyConsumption">Monthly</string>
 </resources>

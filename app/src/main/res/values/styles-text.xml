@@ -13,6 +13,14 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="textGreen" parent="text">
+        <item name="android:textColor">@color/green_500</item>
+    </style>
+
+    <style name="normalTextGreen" parent="textGreen">
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <style name="normalLightTextWhite" parent="normalTextWhite">
         <item name="android:fontFamily">sans-serif-light</item>
     </style>

@@ -23,6 +23,9 @@ class HomeListActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home_list)
 
+        val intent = Intent(this, AddDeviceActivity::class.java)
+        startActivity(intent)
+
         binding.recyclerView.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.recyclerView.adapter = adapter

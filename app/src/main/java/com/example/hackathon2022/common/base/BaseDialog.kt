@@ -20,7 +20,7 @@ class BaseDialog : BaseDialogFragment() {
             dialogType: DialogType = DialogType.INFO,
             onNoClick: (() -> Unit)? = null,
             onYesClick: (() -> Unit)? = null,
-            onConfirmClick: (() -> Unit)? = null
+            onConfirmClick: (() -> Unit)? = null,
         ): BaseDialog {
             val dialog = BaseDialog()
             dialog.show(
@@ -50,7 +50,7 @@ class BaseDialog : BaseDialogFragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog?.window?.requestFeature(Window.FEATURE_NO_TITLE)
@@ -76,7 +76,7 @@ class BaseDialog : BaseDialogFragment() {
 
         when (dialogType) {
             DialogType.INFO -> {
-                binding.title.gravity = Gravity.CENTER;
+                binding.title.gravity = Gravity.CENTER
                 binding.message.visibility = View.GONE
                 binding.buttonNo.visibility = View.GONE
                 binding.buttonYes.visibility = View.GONE

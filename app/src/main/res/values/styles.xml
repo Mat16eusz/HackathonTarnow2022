@@ -8,6 +8,7 @@
         <item name="android:inputType">number</item>
         <item name="android:padding">12dp</item>
         <item name="android:gravity">right</item>
+        <item name="android:enabled">false</item>
         <item name="android:hint">@string/null_string</item>
     </style>
 

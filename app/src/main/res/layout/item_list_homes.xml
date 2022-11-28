@@ -5,13 +5,16 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/homeItemList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounder_dark_background">
 
         <ImageView
             android:id="@+id/iconHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:background="@drawable/rounded_background_light_white"
             android:src="@drawable/list_home_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -20,23 +23,32 @@
         <TextView
             android:id="@+id/homeName"
             style="@style/normalTextBlack"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/rounded_background_light_white"
+            android:padding="5dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
             android:text="@string/home_name"
             android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/iconHome"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/homeEnergy"
             style="@style/normalDarkTextBlack"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
+            android:textColor="@color/backgroundDarkWhiteColor"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/homeName"
             app:layout_constraintStart_toStartOf="@+id/homeName"
             app:layout_constraintTop_toBottomOf="@+id/homeName" />
     </androidx.constraintlayout.widget.ConstraintLayout>

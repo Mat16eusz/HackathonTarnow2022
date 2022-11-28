@@ -13,6 +13,7 @@ import com.example.hackathon2022.common.base.BaseActivity
 import com.example.hackathon2022.databinding.ActivityAddDeviceBinding
 import com.example.hackathon2022.domain.DomainDevice
 import com.google.gson.Gson
+import kotlin.math.roundToInt
 
 class AddDeviceActivity : BaseActivity() {
 
@@ -114,7 +115,7 @@ class AddDeviceActivity : BaseActivity() {
             }
         }
         device.workTime = sumTime
-        device.powerUsage = device.workTime * device.power / 1000.0
+        device.powerUsage = (device.workTime * device.power / 1000.0).roundToInt().toDouble()
 
         val intent = Intent(this, DeviceActivity::class.java)
         val gson = Gson()

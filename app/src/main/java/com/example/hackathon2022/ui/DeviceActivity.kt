@@ -23,6 +23,7 @@ class DeviceActivity : AppCompatActivity() {
         DeviceAdapter()
     }
     private var id: Int? = null
+    private var sum: Double = 0.0
     private var homes: MutableList<DomainHome> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,20 +59,6 @@ class DeviceActivity : AppCompatActivity() {
 
         adapter.items = homes[id!!].devices
 
-        if(!homes!!.isEmpty()){
-            homes!!.forEach{
-                var sum : Double = 0.0;
-                it.devices.forEach{
-                    sum += it.powerUsage
-                }
-                it.usagePower = sum
-                Log.e("SUMA",sum.toString())
-            }
-        }else{
-            Log.e("homes","Homes is epmpty!")
-        }
-
-
         val intentDataDevice = intent.getStringExtra("DEVICE")
         if (intentDataDevice != null) {
             val gson = Gson()
@@ -92,14 +79,22 @@ class DeviceActivity : AppCompatActivity() {
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                sum -= homes[id!!].devices[viewHolder.adapterPosition].powerUsage
+
                 adapter.items.removeAt(viewHolder.adapterPosition)
                 adapter.notifyItemRemoved(viewHolder.adapterPosition)
 
                 homes[id!!].devices = adapter.items
+
+
+                binding.energyConsumption.text = sum.toString().plus(" Wh")
+
                 saveData(homes)
             }
 
         }).attachToRecyclerView(binding.recyclerView)
+
+        sumPowerUsage()
     }
 
     private fun saveData(listHomes: List<DomainHome>) {
@@ -120,6 +115,18 @@ class DeviceActivity : AppCompatActivity() {
             val domainHomes = gson.fromJson<List<DomainHome>>(homesData, typeToken)
             if (!domainHomes.isNullOrEmpty()) {
                 homes = domainHomes.toMutableList()
+            }
+        }
+    }
+
+    private fun sumPowerUsage(){
+        if (homes.isNotEmpty()) {
+            homes.forEach {
+                it.devices.forEach {
+                    sum += it.powerUsage
+                }
+                it.usagePower = sum
+                binding.energyConsumption.text = sum.toString().plus(" Wh")
             }
         }
     }

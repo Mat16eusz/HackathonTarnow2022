@@ -11,9 +11,9 @@ import com.example.hackathon2022.domain.DomainHome
 
 class HomesAdapter : RecyclerView.Adapter<HomesAdapter.HomesViewHolder>() {
 
-    private lateinit var listener: onItemClickListener
+    private lateinit var listener: OnItemClickListener
 
-    interface onItemClickListener {
+    interface OnItemClickListener {
         fun onItemClick(position: Int)
     }
 
@@ -49,9 +49,8 @@ class HomesAdapter : RecyclerView.Adapter<HomesAdapter.HomesViewHolder>() {
 
     inner class HomesViewHolder(
         private val binding: ItemListHomesBinding,
-        listener: onItemClickListener,
-    ) :
-        RecyclerView.ViewHolder(binding.root) {
+        listener: OnItemClickListener,
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: DomainHome) {
             binding.homeName.text = item.homeName
@@ -68,7 +67,7 @@ class HomesAdapter : RecyclerView.Adapter<HomesAdapter.HomesViewHolder>() {
         }
     }
 
-    fun setOnItemClickListener(listener: onItemClickListener) {
+    fun setOnItemClickListener(listener: OnItemClickListener) {
         this.listener = listener
     }
 }

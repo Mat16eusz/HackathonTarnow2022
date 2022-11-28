@@ -300,7 +300,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Powrót" />
+                android:text="@string/cancel" />
 
             <Button
                 android:id="@+id/button7"
@@ -308,7 +308,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="addDevice"
-                android:text="Dodaj" />
+                android:text="@string/add" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -5,7 +5,9 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.hackathon2022.R
 import com.example.hackathon2022.common.base.BaseActivity
 import com.example.hackathon2022.databinding.ActivityEnergyMeterBinding
@@ -59,6 +61,24 @@ class EnergyMeterActivity : BaseActivity() {
         binding.scanEnergyMeter.setOnClickListener {
             barcodeLauncher.launch(ScanOptions())
         }
+
+        ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder,
+            ): Boolean {
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                adapter.items.removeAt(viewHolder.adapterPosition)
+                adapter.notifyItemRemoved(viewHolder.adapterPosition)
+
+                meters = adapter.items
+                saveData(meters)
+            }
+        }).attachToRecyclerView(binding.recyclerView)
     }
 
     private fun saveData(listEnergyMeter: List<DomainEnergyMeter>) {
@@ -89,9 +109,12 @@ class EnergyMeterActivity : BaseActivity() {
         if (result.contents == null) {
             Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
         } else {
-            Toast.makeText(this,
-                "Scanned: " + result.contents,
-                Toast.LENGTH_LONG).show()
+            val energy = DomainEnergyMeter()
+            energy.energy = result.contents
+            meters.add(energy)
+
+            adapter.items = meters
+            saveData(meters)
         }
     }
 }

@@ -76,13 +76,12 @@ class AddDeviceActivity : BaseActivity() {
 
     fun addDevice(view: View) {
         var device = DomainDevice()
-
         device.deviceName = binding.deviceNameInput.text.toString()
         device.deviceType = binding.deviceType.selectedItem.toString()
         device.normalPower = binding.powerSleepModeInput.text.toString().toDouble()
         device.sleepPower = binding.powerSleepModeInput.text.toString().toDouble()
         device.workTime = sumTime
-
+        device.powerUsage = device.workTime * device.normalPower
     }
 
     fun checkDay(view: View){

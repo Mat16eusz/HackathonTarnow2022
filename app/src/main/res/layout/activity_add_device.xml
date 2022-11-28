@@ -6,6 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/backgroundDarkBlackColor"
         tools:context=".ui.AddDeviceActivity">
 
         <TableLayout
@@ -37,10 +38,12 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/rounder_dark_background">
 
                 <TextView
                     android:id="@+id/deviceName"
+                    style="@style/normalTextGreen"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -64,6 +67,7 @@
 
                 <TextView
                     android:id="@+id/textView3"
+                    style="@style/textGreen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -84,11 +88,12 @@
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp">
 
                         <CheckBox
                             android:id="@+id/checkBox1"
-                            style="@style/checkBoxStyle"
+                            style="@style/textGreenBox"
                             android:onClick="checkDay"
                             android:text="@string/monday" />
 
@@ -100,7 +105,7 @@
 
                         <Switch
                             android:id="@+id/switch1"
-                            style="@style/switchAllDay"
+                            style="@style/switchAllDayGreen"
                             android:onClick="disableAll"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
@@ -108,11 +113,12 @@
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp">
 
                         <CheckBox
                             android:id="@+id/checkBox2"
-                            style="@style/checkBoxStyle"
+                            style="@style/textGreenBox"
                             android:onClick="checkDay"
                             android:text="@string/tuesday" />
 
@@ -124,18 +130,19 @@
 
                         <Switch
                             android:id="@+id/switch2"
-                            style="@style/switchAllDay"
+                            style="@style/switchAllDayGreen"
                             android:onClick="disableAll"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
                     </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp">
 
                         <CheckBox
                             android:id="@+id/checkBox3"
-                            style="@style/checkBoxStyle"
+                            style="@style/textGreenBox"
                             android:onClick="checkDay"
                             android:text="@string/wednesday" />
 
@@ -147,18 +154,19 @@
 
                         <Switch
                             android:id="@+id/switch3"
-                            style="@style/switchAllDay"
+                            style="@style/switchAllDayGreen"
                             android:onClick="disableAll"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
                     </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp">
 
                         <CheckBox
                             android:id="@+id/checkBox4"
-                            style="@style/checkBoxStyle"
+                            style="@style/textGreenBox"
                             android:onClick="checkDay"
                             android:text="@string/thursday" />
 
@@ -170,18 +178,19 @@
 
                         <Switch
                             android:id="@+id/switch4"
-                            style="@style/switchAllDay"
+                            style="@style/switchAllDayGreen"
                             android:onClick="disableAll"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
                     </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp">
 
                         <CheckBox
                             android:id="@+id/checkBox5"
-                            style="@style/checkBoxStyle"
+                            style="@style/textGreenBox"
                             android:onClick="checkDay"
                             android:text="@string/friday" />
 
@@ -193,18 +202,19 @@
 
                         <Switch
                             android:id="@+id/switch5"
-                            style="@style/switchAllDay"
+                            style="@style/switchAllDayGreen"
                             android:onClick="disableAll"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
                     </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp">
 
                         <CheckBox
                             android:id="@+id/checkBox6"
-                            style="@style/checkBoxStyle"
+                            style="@style/textGreenBox"
                             android:onClick="checkDay"
                             android:text="@string/saturday" />
 
@@ -216,18 +226,19 @@
 
                         <Switch
                             android:id="@+id/switch6"
-                            style="@style/switchAllDay"
+                            style="@style/switchAllDayGreen"
                             android:onClick="disableAll"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
                     </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp">
 
                         <CheckBox
                             android:id="@+id/checkBox7"
-                            style="@style/checkBoxStyle"
+                            style="@style/textGreenBox"
                             android:onClick="checkDay"
                             android:text="@string/sunday" />
 
@@ -239,7 +250,7 @@
 
                         <Switch
                             android:id="@+id/switch7"
-                            style="@style/switchAllDay"
+                            style="@style/switchAllDayGreen"
                             android:onClick="disableAll"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
                     </TableRow>
@@ -250,10 +261,12 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/rounder_dark_background">
 
                 <TextView
                     android:id="@+id/textView4"
+                    style="@style/normalTextGreen"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -272,7 +285,8 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView5"

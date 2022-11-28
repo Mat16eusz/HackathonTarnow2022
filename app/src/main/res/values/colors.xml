@@ -16,4 +16,6 @@
     <color name="backgroundDarkBlackColor">#FF262626</color>
     <color name="backgroundLightWhiteColor">#FFFFFFFF</color>
     <color name="backgroundDarkWhiteColor">#FFE6E6E6</color>
+
+    <color name="iconDeviceColor">#FF4B830D</color>
 </resources>

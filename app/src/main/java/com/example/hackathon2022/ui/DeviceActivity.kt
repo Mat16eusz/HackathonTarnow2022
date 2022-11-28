@@ -19,7 +19,7 @@ class DeviceActivity : AppCompatActivity() {
     private val adapter: DeviceAdapter by lazy {
         DeviceAdapter()
     }
-    private var devices = mutableListOf<DomainDevice>()
+    private var id: Int? = null
     private var homes: List<DomainHome>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,27 +39,18 @@ class DeviceActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val intentDataHome = intent.getStringExtra("HOME")
-        if (intentDataHome != null) {
-            val gson = Gson()
-            val typeToken = object : TypeToken<List<DomainHome>>() {}.type
-            val h = gson.fromJson<List<DomainHome>>(intentDataHome, typeToken)
-
-            saveData(h)
-        }
-
         loadData()
-        val intentDataId = intent.getIntExtra("ID", -1)
-        if (intentDataId != -1) {
-            adapter.items = homes?.get(0)!!.devices
-        }
+        val sharedPref = getSharedPreferences("PREFERENCE_NAME", MODE_PRIVATE)
+        id = sharedPref.getInt("ID", -1)
+
+        adapter.items = homes?.get(id!!)!!.devices
 
         val intentDataDevice = intent.getStringExtra("DEVICE")
         if (intentDataDevice != null) {
             val gson = Gson()
             val domainDevice = gson.fromJson(intentDataDevice, DomainDevice::class.java)
-            homes!![0].devices.add(domainDevice)
-            adapter.items = homes!![0].devices
+            homes!![id!!].devices.add(domainDevice)
+            adapter.items = homes!![id!!].devices
 
             saveData(homes!!)
         }

@@ -55,7 +55,12 @@ class HomeListActivity : BaseActivity() {
                 val gson = Gson()
                 val domainHomes = gson.toJson(homes)
                 intent.putExtra("HOME", domainHomes)
-                intent.putExtra("ID", homes[position].id)
+
+                val sharedPreference =  getSharedPreferences("PREFERENCE_NAME", MODE_PRIVATE)
+                val editor = sharedPreference.edit()
+                editor.putInt("ID", position)
+                editor.apply()
+
                 startActivity(intent)
             }
         })

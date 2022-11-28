@@ -47,9 +47,14 @@ class DeviceAdapter : RecyclerView.Adapter<DeviceAdapter.DeviceViewHolder>() {
 
         fun bind(item: DomainDevice) {
             binding.deviceName.text = item.deviceName
-
+            when(item.deviceType){
+                "PC" -> binding.iconDevice.setBackgroundResource(R.drawable.pc_icon)
+                "TV" -> binding.iconDevice.setBackgroundResource(R.drawable.tv_icon)
+                "Pralka" -> binding.iconDevice.setBackgroundResource(R.drawable.washing_machine_icon)
+                "Światło" -> binding.iconDevice.setBackgroundResource(R.drawable.light_icon)
+            }
             val usage: String =
-                context?.getString(R.string.time) + item.workTime.toString() +"W "+
+                context?.getString(R.string.time) + item.workTime.toString() +"h "+
                         context?.getString(R.string.power) + item.power.toString() + "W"
             binding.usagePower.text = usage
         }

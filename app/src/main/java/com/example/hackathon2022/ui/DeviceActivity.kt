@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -56,6 +57,20 @@ class DeviceActivity : AppCompatActivity() {
         }
 
         adapter.items = homes[id!!].devices
+
+        if(!homes!!.isEmpty()){
+            homes!!.forEach{
+                var sum : Double = 0.0;
+                it.devices.forEach{
+                    sum += it.powerUsage
+                }
+                it.usagePower = sum
+                Log.e("SUMA",sum.toString())
+            }
+        }else{
+            Log.e("homes","Homes is epmpty!")
+        }
+
 
         val intentDataDevice = intent.getStringExtra("DEVICE")
         if (intentDataDevice != null) {

@@ -108,6 +108,11 @@ class AddDeviceActivity : BaseActivity() {
         if (binding.powerDeviceInput.text.isNotEmpty()) {
             device.power = binding.powerDeviceInput.text.toString().toDouble()
         }
+        arrayTimeInputs?.forEach {
+            if(it.text.isNotEmpty() && it.isEnabled){
+                sumTime += it.text.toString().toDouble()
+            }
+        }
         device.workTime = sumTime
         device.powerUsage = device.workTime * device.power
 
@@ -122,6 +127,7 @@ class AddDeviceActivity : BaseActivity() {
     fun checkDay(view: View) {
         val myId = getIdInt(view)
         val myBox = arrayBoxes?.get(myId)
+        val myInput = arrayTimeInputs?.get(myId)
 
         if (arrayBoxes?.contains(myBox) == true) {
             if (arrayBoxes?.get(myId)?.isEnabled == arrayTimeInputs?.get(myId)?.isEnabled) {

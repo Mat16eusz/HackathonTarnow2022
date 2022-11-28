@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,6 +23,7 @@ class DeviceActivity : AppCompatActivity() {
         DeviceAdapter()
     }
     private var id: Int? = null
+    private var sum: Double = 0.0
     private var homes: MutableList<DomainHome> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +31,7 @@ class DeviceActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_device)
 
         binding.back.setOnClickListener {
+            saveData(homes)
             val intent = Intent(this, HomeListActivity::class.java)
             startActivity(intent)
         }
@@ -77,14 +80,22 @@ class DeviceActivity : AppCompatActivity() {
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                sum -= homes[id!!].devices[viewHolder.adapterPosition].powerUsage
+
                 adapter.items.removeAt(viewHolder.adapterPosition)
                 adapter.notifyItemRemoved(viewHolder.adapterPosition)
 
                 homes[id!!].devices = adapter.items
+
+
+                binding.energyConsumption.text = sum.toString().plus(applicationContext.getString(R.string.energy_symbol))
+
                 saveData(homes)
             }
 
         }).attachToRecyclerView(binding.recyclerView)
+
+        sumPowerUsage()
     }
 
     private fun saveData(listHomes: List<DomainHome>) {
@@ -105,6 +116,18 @@ class DeviceActivity : AppCompatActivity() {
             val domainHomes = gson.fromJson<List<DomainHome>>(homesData, typeToken)
             if (!domainHomes.isNullOrEmpty()) {
                 homes = domainHomes.toMutableList()
+            }
+        }
+    }
+
+    private fun sumPowerUsage(){
+        if (homes.isNotEmpty()) {
+            homes.forEach {
+                it.devices.forEach {
+                    sum += it.powerUsage
+                }
+                it.usagePower = sum
+                binding.energyConsumption.text = sum.toString().plus(applicationContext.getString(R.string.energy_symbol))
             }
         }
     }

@@ -46,6 +46,8 @@
             android:layout_height="wrap_content"
             android:gravity="bottom"
             android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -59,7 +61,7 @@
                 android:drawableStart="@drawable/homes_layout_icon"
                 android:text="@string/homes_bar"
                 android:textAllCaps="false"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/energyMeter"
@@ -70,7 +72,7 @@
                 android:drawableStart="@drawable/counter_bar_icon"
                 android:text="@string/counters_bar"
                 android:textAllCaps="false"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/settings"
@@ -81,7 +83,7 @@
                 android:drawableStart="@drawable/settings_bar_icon"
                 android:text="@string/settings"
                 android:textAllCaps="false"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -40,7 +40,7 @@
     <string name="weeklyConsumption">Weekly</string>
     <string name="monthlyConsumption">Monthly</string>
     <string name="add_home">Adding home</string>
-    <string name="energy_symbol">kWh</string>
+    <string name="energy_symbol" translatable="false">" kWh"</string>
     <string name="time">"Time: "</string>
     <string name="add_energy_meter">Add your energy meter</string>
 </resources>

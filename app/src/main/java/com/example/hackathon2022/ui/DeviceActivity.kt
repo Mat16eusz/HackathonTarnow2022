@@ -16,6 +16,7 @@ import com.example.hackathon2022.domain.DomainDevice
 import com.example.hackathon2022.domain.DomainHome
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import kotlin.math.roundToInt
 
 class DeviceActivity : AppCompatActivity() {
 
@@ -61,6 +62,10 @@ class DeviceActivity : AppCompatActivity() {
 
         adapter.items = homes[id!!].devices
 
+        if (homes[id!!].devices.size == 0) {
+            binding.energyConsumption.text = "0.0 kWh"
+        }
+
         val intentDataDevice = intent.getStringExtra("DEVICE")
         if (intentDataDevice != null) {
             val gson = Gson()
@@ -87,16 +92,34 @@ class DeviceActivity : AppCompatActivity() {
                 adapter.notifyItemRemoved(viewHolder.adapterPosition)
 
                 homes[id!!].devices = adapter.items
-
-
-                binding.energyConsumption.text = sum.toString().plus(applicationContext.getString(R.string.energy_symbol))
-
                 saveData(homes)
             }
 
         }).attachToRecyclerView(binding.recyclerView)
 
         sumPowerUsage()
+
+        binding.weeklyConsumption.setOnClickListener {
+            var temp = homes[id!!].usagePower
+            temp = temp?.times(1)
+            temp = temp?.roundToInt()?.toDouble()
+            binding.energyConsumption.text =
+                temp.toString().plus(applicationContext.getString(R.string.energy_symbol))
+        }
+        binding.monthlyConsumption.setOnClickListener {
+            var temp = homes[id!!].usagePower
+            temp = temp?.times(4)
+            temp = temp?.roundToInt()?.toDouble()
+            binding.energyConsumption.text =
+                temp.toString().plus(applicationContext.getString(R.string.energy_symbol))
+        }
+        binding.annualConsumption.setOnClickListener {
+            var temp = homes[id!!].usagePower
+            temp = temp?.times(4)?.times(12)
+            temp = temp?.roundToInt()?.toDouble()
+            binding.energyConsumption.text =
+                temp.toString().plus(applicationContext.getString(R.string.energy_symbol))
+        }
     }
 
     private fun saveData(listHomes: List<DomainHome>) {
@@ -121,31 +144,16 @@ class DeviceActivity : AppCompatActivity() {
         }
     }
 
-    private fun sumPowerUsage(){
+    private fun sumPowerUsage() {
         if (homes.isNotEmpty()) {
             homes.forEach {
                 it.devices.forEach {
                     sum += it.powerUsage
                 }
                 it.usagePower = sum
-                binding.energyConsumption.text = sum.toString().plus(applicationContext.getString(R.string.energy_symbol))
+                binding.energyConsumption.text =
+                    sum.toString().plus(applicationContext.getString(R.string.energy_symbol))
             }
         }
-    }
-
-    fun year(view: View){
-        var temp = binding.energyConsumption.text.toString().toDouble()
-        temp = temp * 4 * 12
-        binding.energyConsumption.text = temp.toString()
-    }
-    fun moth(view : View){
-        var temp = binding.energyConsumption.text.toString().toDouble()
-        temp = temp * 4
-        binding.energyConsumption.text = temp.toString()
-    }
-    fun week(view : View){
-//        var temp = binding.energyConsumption.text.toString().toDouble()
-//        temp = temp / 7.0
-//        binding.energyConsumption.text = temp.toString()
     }
 }

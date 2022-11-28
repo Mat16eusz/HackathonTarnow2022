@@ -31,6 +31,7 @@ class DeviceActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_device)
 
         binding.back.setOnClickListener {
+            saveData(homes)
             val intent = Intent(this, HomeListActivity::class.java)
             startActivity(intent)
         }
@@ -87,7 +88,7 @@ class DeviceActivity : AppCompatActivity() {
                 homes[id!!].devices = adapter.items
 
 
-                binding.energyConsumption.text = sum.toString().plus(" Wh")
+                binding.energyConsumption.text = sum.toString().plus(applicationContext.getString(R.string.energy_symbol))
 
                 saveData(homes)
             }
@@ -126,7 +127,7 @@ class DeviceActivity : AppCompatActivity() {
                     sum += it.powerUsage
                 }
                 it.usagePower = sum
-                binding.energyConsumption.text = sum.toString().plus(" Wh")
+                binding.energyConsumption.text = sum.toString().plus(applicationContext.getString(R.string.energy_symbol))
             }
         }
     }

@@ -114,7 +114,7 @@ class AddDeviceActivity : BaseActivity() {
             }
         }
         device.workTime = sumTime
-        device.powerUsage = device.workTime * device.power
+        device.powerUsage = device.workTime * device.power / 1000.0
 
         val intent = Intent(this, DeviceActivity::class.java)
         val gson = Gson()

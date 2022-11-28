@@ -54,8 +54,8 @@ class DeviceAdapter : RecyclerView.Adapter<DeviceAdapter.DeviceViewHolder>() {
                 "Światło" -> binding.iconDevice.setBackgroundResource(R.drawable.light_icon)
             }
             val usage: String =
-                context?.getString(R.string.time) + item.workTime.toString() +"h "+
-                        context?.getString(R.string.power) + item.power.toString() + "W"
+                        context?.getString(R.string.time)   + item.workTime.toString()  +"h "+
+                        context?.getString(R.string.power)  + item.power.toString()     + "W"
             binding.usagePower.text = usage
         }
     }

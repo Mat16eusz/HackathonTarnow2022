@@ -35,4 +35,5 @@
     <string name="add_home">Dodaj mieszkanie</string>
     <string name="energy_symbol">kWh</string>
     <string name="time">"Czas: "</string>
+    <string name="add_energy_meter">Dodaj swój licznik</string>
 </resources>

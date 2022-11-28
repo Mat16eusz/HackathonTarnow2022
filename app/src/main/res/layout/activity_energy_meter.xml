@@ -6,39 +6,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.HomeListActivity">
+        tools:context=".ui.EnergyMeterActivity">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/addHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
-            android:layout_margin="16dp"
-            android:contentDescription="@string/add"
-            android:src="@drawable/add_home_icon"
-            app:backgroundTint="@color/green_200"
-            app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="0dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            tools:listitem="@layout/item_energy_meter"
             android:layout_height="0dp"
-            android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="10dp"
-                tools:listitem="@layout/item_list_homes" />
-
-        </LinearLayout>
+            app:layout_constraintTop_toBottomOf="@+id/title" />
 
         <LinearLayout
             android:id="@+id/bar"
@@ -83,5 +61,35 @@
                 android:textAllCaps="false"
                 android:textSize="16sp" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/title"
+            android:textSize="32sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_energy_meter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/addEnergyMeter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/add"
+            app:layout_constraintBottom_toTopOf="@+id/bar"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageButton
+            android:id="@+id/scanEnergyMeter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/scan_icon"
+            app:layout_constraintBottom_toTopOf="@+id/addEnergyMeter"
+            app:layout_constraintEnd_toEndOf="@+id/addEnergyMeter"
+            app:layout_constraintStart_toStartOf="@+id/addEnergyMeter" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

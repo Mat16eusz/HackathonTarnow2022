@@ -6,4 +6,5 @@ data class DomainDevice(
     var normalPower: Double = -1.00,
     var sleepPower: Double = -1.00,
     var workTime: Double = -1.00,
+    var powerUsage: Double = -1.00,
 )

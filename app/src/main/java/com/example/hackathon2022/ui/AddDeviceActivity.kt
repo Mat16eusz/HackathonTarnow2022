@@ -80,11 +80,11 @@ class AddDeviceActivity : BaseActivity() {
         if (arraySwitches?.contains(mySwitch) == true) {
             indexID = getIdInt(mySwitch)
             if (mySwitch.isChecked) {
-                arrayBoxes?.get(indexID)?.isEnabled = true
+                arrayBoxes?.get(indexID)?.isEnabled = false
                 arrayBoxes?.get(indexID)?.isChecked = true
                 arrayTimeInputs?.get(indexID)?.isEnabled = false
             } else {
-                arrayBoxes?.get(indexID)?.isEnabled = false
+                arrayBoxes?.get(indexID)?.isEnabled = true
                 arrayBoxes?.get(indexID)?.isChecked = false
                 arrayTimeInputs?.get(indexID)?.isEnabled = false
             }
@@ -109,18 +109,19 @@ class AddDeviceActivity : BaseActivity() {
             device.sleepPower = binding.powerSleepModeInput.text.toString().toDouble()
         }
         device.workTime = sumTime
+        device.powerUsage = device.workTime * device.normalPower
 
         val intent = Intent(this, DeviceActivity::class.java)
         val gson = Gson()
         val domainDevice = gson.toJson(device)
         intent.putExtra("DEVICE", domainDevice)
         startActivity(intent)
+
     }
 
     fun checkDay(view: View) {
         val myId = getIdInt(view)
         val myBox = arrayBoxes?.get(myId)
-        var myEdit = arrayTimeInputs?.get(myId)
 
         if (arrayBoxes?.contains(myBox) == true) {
             if (arrayBoxes?.get(myId)?.isEnabled == arrayTimeInputs?.get(myId)?.isEnabled) {

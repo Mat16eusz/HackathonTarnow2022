@@ -1,6 +1,7 @@
 package com.example.hackathon2022.ui
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -52,6 +53,7 @@ class DeviceAdapter : RecyclerView.Adapter<DeviceAdapter.DeviceViewHolder>() {
                 "TV" -> binding.iconDevice.setBackgroundResource(R.drawable.tv_icon)
                 "Pralka" -> binding.iconDevice.setBackgroundResource(R.drawable.washing_machine_icon)
                 "Światło" -> binding.iconDevice.setBackgroundResource(R.drawable.light_icon)
+                else -> binding.iconDevice.setBackgroundResource(R.drawable.tv_icon)
             }
             val usage: String =
                         context?.getString(R.string.time)   + item.workTime.toString()  +"h "+

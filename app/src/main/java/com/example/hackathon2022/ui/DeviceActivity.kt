@@ -16,6 +16,7 @@ import com.example.hackathon2022.domain.DomainDevice
 import com.example.hackathon2022.domain.DomainHome
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import kotlin.math.roundToInt
 
 class DeviceActivity : AppCompatActivity() {
 
@@ -135,12 +136,12 @@ class DeviceActivity : AppCompatActivity() {
 
     fun year(view: View){
         var temp = binding.energyConsumption.text.toString().toDouble()
-        temp = temp * 4 * 12
+        temp = (temp * 4.0 * 12.0).roundToInt().toDouble()
         binding.energyConsumption.text = temp.toString()
     }
     fun moth(view : View){
         var temp = binding.energyConsumption.text.toString().toDouble()
-        temp = temp * 4
+        temp = (temp * 4.0).roundToInt().toDouble()
         binding.energyConsumption.text = temp.toString()
     }
     fun week(view : View){

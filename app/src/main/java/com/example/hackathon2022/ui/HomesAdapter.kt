@@ -1,6 +1,7 @@
 package com.example.hackathon2022.ui
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -44,6 +45,7 @@ class HomesAdapter : RecyclerView.Adapter<HomesAdapter.HomesViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: HomesViewHolder, position: Int) {
+        Log.e("position",position.toString())
         return holder.bind(items[position])
     }
 
@@ -54,6 +56,7 @@ class HomesAdapter : RecyclerView.Adapter<HomesAdapter.HomesViewHolder>() {
 
         fun bind(item: DomainHome) {
             binding.homeName.text = item.homeName
+            Log.e("bug",binding.homeEnergy.text.toString())
             binding.homeEnergy.text =
                 context?.getString(R.string.home_energy_use).plus(item.usagePower.toString().plus(context?.getString(
                     R.string.energy_symbol)))

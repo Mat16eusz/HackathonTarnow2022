@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundDarkBlackColor"
+        tools:context=".ui.AddDeviceActivity">
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:shrinkColumns="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Spinner
+                    android:id="@+id/deviceType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/add"
+                    android:padding="10dp"
+                    android:scrollbarSize="10dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounder_dark_background">
+
+                <TextView
+                    android:id="@+id/deviceName"
+                    style="@style/normalTextGreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/deviceName" />
+
+                <EditText
+                    android:id="@+id/deviceNameInput"
+                    style="@style/dayListInput"
+                    android:layout_weight="1"
+                    android:autofillHints=""
+                    android:enabled="true"
+                    android:hint="@string/null_string"
+                    android:inputType="text" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    style="@style/textGreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/workDays" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableLayout
+                    android:layout_width="364dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:shrinkColumns="1"
+                    android:stretchColumns="*"
+                    tools:ignore="UselessParent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBox1"
+                            style="@style/textGreenBox"
+                            android:onClick="checkDay"
+                            android:text="@string/monday" />
+
+                        <EditText
+                            android:id="@+id/timeInput1"
+                            style="@style/dayListInput"
+                            android:autofillHints=""
+                            tools:ignore="LabelFor" />
+
+                        <Switch
+                            android:id="@+id/switch1"
+                            style="@style/switchAllDayGreen"
+                            android:onClick="disableAll"
+                            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBox2"
+                            style="@style/textGreenBox"
+                            android:onClick="checkDay"
+                            android:text="@string/tuesday" />
+
+                        <EditText
+                            android:id="@+id/timeInput2"
+                            style="@style/dayListInput"
+                            android:autofillHints=""
+                            tools:ignore="LabelFor" />
+
+                        <Switch
+                            android:id="@+id/switch2"
+                            style="@style/switchAllDayGreen"
+                            android:onClick="disableAll"
+                            tools:ignore="UseSwitchCompatOrMaterialXml" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBox3"
+                            style="@style/textGreenBox"
+                            android:onClick="checkDay"
+                            android:text="@string/wednesday" />
+
+                        <EditText
+                            android:id="@+id/timeInput3"
+                            style="@style/dayListInput"
+                            android:autofillHints=""
+                            tools:ignore="LabelFor" />
+
+                        <Switch
+                            android:id="@+id/switch3"
+                            style="@style/switchAllDayGreen"
+                            android:onClick="disableAll"
+                            tools:ignore="UseSwitchCompatOrMaterialXml" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBox4"
+                            style="@style/textGreenBox"
+                            android:onClick="checkDay"
+                            android:text="@string/thursday" />
+
+                        <EditText
+                            android:id="@+id/timeInput4"
+                            style="@style/dayListInput"
+                            android:autofillHints=""
+                            tools:ignore="LabelFor" />
+
+                        <Switch
+                            android:id="@+id/switch4"
+                            style="@style/switchAllDayGreen"
+                            android:onClick="disableAll"
+                            tools:ignore="UseSwitchCompatOrMaterialXml" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBox5"
+                            style="@style/textGreenBox"
+                            android:onClick="checkDay"
+                            android:text="@string/friday" />
+
+                        <EditText
+                            android:id="@+id/timeInput5"
+                            style="@style/dayListInput"
+                            android:autofillHints=""
+                            tools:ignore="LabelFor" />
+
+                        <Switch
+                            android:id="@+id/switch5"
+                            style="@style/switchAllDayGreen"
+                            android:onClick="disableAll"
+                            tools:ignore="UseSwitchCompatOrMaterialXml" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBox6"
+                            style="@style/textGreenBox"
+                            android:onClick="checkDay"
+                            android:text="@string/saturday" />
+
+                        <EditText
+                            android:id="@+id/timeInput6"
+                            style="@style/dayListInput"
+                            android:autofillHints=""
+                            tools:ignore="LabelFor" />
+
+                        <Switch
+                            android:id="@+id/switch6"
+                            style="@style/switchAllDayGreen"
+                            android:onClick="disableAll"
+                            tools:ignore="UseSwitchCompatOrMaterialXml" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBox7"
+                            style="@style/textGreenBox"
+                            android:onClick="checkDay"
+                            android:text="@string/sunday" />
+
+                        <EditText
+                            android:id="@+id/timeInput7"
+                            style="@style/dayListInput"
+                            android:autofillHints=""
+                            tools:ignore="LabelFor" />
+
+                        <Switch
+                            android:id="@+id/switch7"
+                            style="@style/switchAllDayGreen"
+                            android:onClick="disableAll"
+                            tools:ignore="UseSwitchCompatOrMaterialXml" />
+                    </TableRow>
+
+                </TableLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounder_dark_background">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    style="@style/normalTextGreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/devicePower" />
+
+                <EditText
+                    android:id="@+id/powerDeviceInput"
+                    style="@style/dayListInput"
+                    android:layout_weight="1"
+                    android:autofillHints=""
+                    android:enabled="true"
+                    android:hint="@string/null_string" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/deviceSleepPower" />
+
+                <EditText
+                    android:id="@+id/powerSleepModeInput"
+                    style="@style/dayListInput"
+                    android:autofillHints=""
+                    android:enabled="true" />
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/tableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cancel" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="addDevice"
+                android:text="@string/add" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

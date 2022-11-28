@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="dayListInput">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ems">10</item>
+        <item name="android:inputType">number</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:gravity">right</item>
+        <item name="android:enabled">false</item>
+        <item name="android:hint">@string/null_string</item>
+    </style>
+
+    <style name="switchAllDay">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:text">@string/allDay</item>
+
+    </style>
+
+    <style name="checkBoxStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="columnRowStyle">
+        <item name="android:paddingHorizontal" tools:ignore="NewApi">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+</resources>

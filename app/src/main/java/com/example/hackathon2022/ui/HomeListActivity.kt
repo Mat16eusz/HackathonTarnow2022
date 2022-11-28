@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hackathon2022.R
 import com.example.hackathon2022.common.base.BaseActivity
 import com.example.hackathon2022.databinding.ActivityHomeListBinding
+import com.example.hackathon2022.domain.DomainDevice
 import com.example.hackathon2022.domain.DomainHome
 import com.example.hackathon2022.ui.dialog.AddHomeDialog
 import com.google.gson.Gson
@@ -20,6 +21,7 @@ class HomeListActivity : BaseActivity() {
         HomesAdapter()
     }
     private var homes = mutableListOf<DomainHome>()
+    private var devices = mutableListOf<DomainDevice>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +41,7 @@ class HomeListActivity : BaseActivity() {
                 onYesClick = {
                     val home = DomainHome()
                     home.homeName = it
+                    home.id = homes.size
                     homes.add(home)
 
                     adapter.items = homes
@@ -47,8 +50,12 @@ class HomeListActivity : BaseActivity() {
             )
         }
         val intent = Intent(this, DeviceActivity::class.java)
-        adapter.setOnItemClickListener(object : HomesAdapter.onItemClickListener {
+        adapter.setOnItemClickListener(object : HomesAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
+                val gson = Gson()
+                val domainHomes = gson.toJson(homes)
+                intent.putExtra("HOME", domainHomes)
+                intent.putExtra("ID", homes[position].id)
                 startActivity(intent)
             }
         })
@@ -68,9 +75,11 @@ class HomeListActivity : BaseActivity() {
         val gson = Gson()
         val typeToken = object : TypeToken<List<DomainHome>>() {}.type
         val homesData = sharedPreferences.getString("HOMES", "defaultName")
-        val domainHomes = gson.fromJson<List<DomainHome>>(homesData, typeToken)
-        if (domainHomes.isNotEmpty()) {
-            homes = domainHomes.toMutableList()
+        if (homesData != "defaultName") {
+            val domainHomes = gson.fromJson<List<DomainHome>>(homesData, typeToken)
+            if (domainHomes.isNotEmpty()) {
+                homes = domainHomes.toMutableList()
+            }
         }
     }
 }

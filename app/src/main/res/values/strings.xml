@@ -12,11 +12,32 @@
     <string name="add">Add</string>
     <string name="settings">Settings</string>
     <string name="footer">Hackathon Tarnow 2022</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="allDay">All day</string>
+    <string name="workDays">Days of work:</string>
+    <string name="power_usage">Power usage:</string>
+    <string name="day_1_input" translatable="false">1</string>
+    <string name="day_2_input" translatable="false">2</string>
+    <string name="day_3_input" translatable="false">3</string>
+    <string name="day_4_input" translatable="false">4</string>
+    <string name="day_5_input" translatable="false">5</string>
+    <string name="day_6_input" translatable="false">6</string>
+    <string name="day_7_input" translatable="false">7</string>
+    <string name="null_string" translatable="false">" "</string>
+    <string name="devicePower">Power in Wats:</string>
+    <string name="deviceName">Name:</string>
+    <string name="deviceSleepPower">Power usage in sleep mode:</string>
     <string name="add_device">Adding Device</string>
     <string name="sleep">Sleep:</string>
     <string name="power">" Normal: "</string>
     <string name="wat">W</string>
-    <string name="daily_consumption">Daily</string>
+    <string name="annual_consumption">Annual</string>
     <string name="weeklyConsumption">Weekly</string>
     <string name="monthlyConsumption">Monthly</string>
     <string name="add_home">Adding home</string>

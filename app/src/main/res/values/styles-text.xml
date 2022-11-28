@@ -17,6 +17,14 @@
         <item name="android:textColor">@color/green_500</item>
     </style>
 
+    <style name="textGreenBox" parent="checkBoxStyle">
+        <item name="android:textColor">@color/green_500</item>
+    </style>
+
+    <style name="switchAllDayGreen" parent="switchAllDay">
+        <item name="android:textColor">@color/green_500</item>
+    </style>
+
     <style name="normalTextGreen" parent="textGreen">
         <item name="android:textSize">18sp</item>
     </style>

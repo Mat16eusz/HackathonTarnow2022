@@ -22,7 +22,7 @@ class DeviceActivity : AppCompatActivity() {
         DeviceAdapter()
     }
     private var id: Int? = null
-    private var homes: List<DomainHome>? = null
+    private var homes: MutableList<DomainHome> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,29 +42,29 @@ class DeviceActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val intentDataHome = intent.getStringExtra("HOME")
-        if (intentDataHome != null) {
-            val gson = Gson()
-            val typeToken = object : TypeToken<List<DomainHome>>() {}.type
-            val domainHome = gson.fromJson<List<DomainHome>>(intentDataHome, typeToken)
-
-            saveData(domainHome)
-        }
-
         loadData()
         val sharedPref = getSharedPreferences("PREFERENCE_NAME", MODE_PRIVATE)
         id = sharedPref.getInt("ID", -1)
+        if (homes.size == id) {
+            val intentDataHome = intent.getStringExtra("HOME")
+            if (intentDataHome != null) {
+                val gson = Gson()
+                val domainHome = gson.fromJson(intentDataHome, DomainHome::class.java)
+                homes.add(domainHome)
+                saveData(homes)
+            }
+        }
 
-        adapter.items = homes?.get(id!!)!!.devices
+        adapter.items = homes[id!!].devices
 
         val intentDataDevice = intent.getStringExtra("DEVICE")
         if (intentDataDevice != null) {
             val gson = Gson()
             val domainDevice = gson.fromJson(intentDataDevice, DomainDevice::class.java)
-            homes!![id!!].devices.add(domainDevice)
-            adapter.items = homes!![id!!].devices
+            homes[id!!].devices.add(domainDevice)
+            adapter.items = homes[id!!].devices
 
-            saveData(homes.orEmpty())
+            saveData(homes)
         }
 
         adapter.setOnItemClickListener(object : DeviceAdapter.OnItemClickListener {
@@ -86,8 +86,8 @@ class DeviceActivity : AppCompatActivity() {
                 adapter.items.removeAt(viewHolder.adapterPosition)
                 adapter.notifyItemRemoved(viewHolder.adapterPosition)
 
-                homes?.get(id!!)!!.devices = adapter.items
-                saveData(homes.orEmpty())
+                homes[id!!].devices = adapter.items
+                saveData(homes)
             }
 
         }).attachToRecyclerView(binding.recyclerView)

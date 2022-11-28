@@ -51,8 +51,8 @@ class HomeListActivity : BaseActivity() {
         adapter.setOnItemClickListener(object : HomesAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
                 val gson = Gson()
-                val domainHomes = gson.toJson(homes)
-                intent.putExtra("HOME", domainHomes)
+                val domainHome = gson.toJson(homes[position])
+                intent.putExtra("HOME", domainHome)
 
                 val sharedPreference =  getSharedPreferences("PREFERENCE_NAME", MODE_PRIVATE)
                 val editor = sharedPreference.edit()

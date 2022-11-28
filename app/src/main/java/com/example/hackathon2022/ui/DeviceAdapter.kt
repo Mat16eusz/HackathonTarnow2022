@@ -56,8 +56,8 @@ class DeviceAdapter : RecyclerView.Adapter<DeviceAdapter.DeviceViewHolder>() {
             binding.deviceName.text = item.deviceName
 
             val usage: String =
-                context?.getString(R.string.sleep) + item.sleepPower.toString() +
-                        context?.getString(R.string.power) + item.normalPower.toString()
+                context?.getString(R.string.time) + item.workTime.toString() +"W "+
+                        context?.getString(R.string.power) + item.power.toString() + "W"
             binding.usagePower.text = usage
         }
 

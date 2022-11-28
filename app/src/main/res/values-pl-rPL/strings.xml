@@ -27,12 +27,12 @@
     <string name="deviceName">Nazwa:</string>
     <string name="deviceSleepPower">Zużycie energii w trybie czuwania:</string>
     <string name="add_device">Dodaj urządzenie</string>
-    <string name="sleep">"Spoczynek: "</string>
-    <string name="power">" Normalne użycie: "</string>
+    <string name="power">" Moc: "</string>
     <string name="wat">W</string>
     <string name="annual_consumption">Roczne</string>
     <string name="weeklyConsumption">Tygodniowy</string>
     <string name="monthlyConsumption">Miesięczny</string>
     <string name="add_home">Dodaj mieszkanie</string>
     <string name="energy_symbol">kWh</string>
+    <string name="time">"Czas: "</string>
 </resources>

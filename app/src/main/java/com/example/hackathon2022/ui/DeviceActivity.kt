@@ -27,7 +27,8 @@ class DeviceActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_device)
 
         binding.back.setOnClickListener {
-            finish()
+            val intent = Intent(this, HomeListActivity::class.java)
+            startActivity(intent)
         }
 
         binding.recyclerView.layoutManager =
@@ -52,7 +53,7 @@ class DeviceActivity : AppCompatActivity() {
             homes!![id!!].devices.add(domainDevice)
             adapter.items = homes!![id!!].devices
 
-            saveData(homes!!)
+            saveData(homes.orEmpty())
         }
 
         adapter.setOnItemClickListener(object : DeviceAdapter.OnItemClickListener {

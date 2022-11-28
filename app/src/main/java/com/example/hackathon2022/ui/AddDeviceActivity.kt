@@ -72,6 +72,9 @@ class AddDeviceActivity : BaseActivity() {
         )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spin.adapter = adapter
+        binding.backAddDevice.setOnClickListener {
+            finish()
+        }
     }
 
     fun disableAll(view: View) {
@@ -103,13 +106,10 @@ class AddDeviceActivity : BaseActivity() {
         device.deviceName = binding.deviceNameInput.text.toString()
         device.deviceType = binding.deviceType.selectedItem.toString()
         if (binding.powerDeviceInput.text.isNotEmpty()) {
-            device.normalPower = binding.powerDeviceInput.text.toString().toDouble()
-        }
-        if (binding.powerSleepModeInput.text.isNotEmpty()) {
-            device.sleepPower = binding.powerSleepModeInput.text.toString().toDouble()
+            device.power = binding.powerDeviceInput.text.toString().toDouble()
         }
         device.workTime = sumTime
-        device.powerUsage = device.workTime * device.normalPower
+        device.powerUsage = device.workTime * device.power
 
         val intent = Intent(this, DeviceActivity::class.java)
         val gson = Gson()

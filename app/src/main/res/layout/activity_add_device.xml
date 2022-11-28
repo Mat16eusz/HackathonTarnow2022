@@ -58,7 +58,8 @@
                     android:autofillHints=""
                     android:enabled="true"
                     android:hint="@string/null_string"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:textColorHint="@color/design_default_color_on_primary" />
             </TableRow>
 
             <TableRow
@@ -95,12 +96,14 @@
                             android:id="@+id/checkBox1"
                             style="@style/textGreenBox"
                             android:onClick="checkDay"
-                            android:text="@string/monday" />
+                            android:text="@string/monday"
+                            android:textColorHint="@color/design_default_color_on_primary" />
 
                         <EditText
                             android:id="@+id/timeInput1"
                             style="@style/dayListInput"
                             android:autofillHints=""
+                            android:textColorHint="@color/design_default_color_on_primary"
                             tools:ignore="LabelFor" />
 
                         <Switch
@@ -120,12 +123,14 @@
                             android:id="@+id/checkBox2"
                             style="@style/textGreenBox"
                             android:onClick="checkDay"
-                            android:text="@string/tuesday" />
+                            android:text="@string/tuesday"
+                            android:textColorHint="@color/design_default_color_on_primary" />
 
                         <EditText
                             android:id="@+id/timeInput2"
                             style="@style/dayListInput"
                             android:autofillHints=""
+                            android:textColorHint="@color/design_default_color_on_primary"
                             tools:ignore="LabelFor" />
 
                         <Switch
@@ -144,12 +149,14 @@
                             android:id="@+id/checkBox3"
                             style="@style/textGreenBox"
                             android:onClick="checkDay"
-                            android:text="@string/wednesday" />
+                            android:text="@string/wednesday"
+                            android:textColorHint="@color/design_default_color_on_primary" />
 
                         <EditText
                             android:id="@+id/timeInput3"
                             style="@style/dayListInput"
                             android:autofillHints=""
+                            android:textColorHint="@color/design_default_color_on_primary"
                             tools:ignore="LabelFor" />
 
                         <Switch
@@ -168,12 +175,14 @@
                             android:id="@+id/checkBox4"
                             style="@style/textGreenBox"
                             android:onClick="checkDay"
-                            android:text="@string/thursday" />
+                            android:text="@string/thursday"
+                            android:textColorHint="@color/design_default_color_on_primary" />
 
                         <EditText
                             android:id="@+id/timeInput4"
                             style="@style/dayListInput"
                             android:autofillHints=""
+                            android:textColorHint="@color/design_default_color_on_primary"
                             tools:ignore="LabelFor" />
 
                         <Switch
@@ -192,12 +201,14 @@
                             android:id="@+id/checkBox5"
                             style="@style/textGreenBox"
                             android:onClick="checkDay"
-                            android:text="@string/friday" />
+                            android:text="@string/friday"
+                            android:textColorHint="@color/design_default_color_on_primary" />
 
                         <EditText
                             android:id="@+id/timeInput5"
                             style="@style/dayListInput"
                             android:autofillHints=""
+                            android:textColorHint="@color/design_default_color_on_primary"
                             tools:ignore="LabelFor" />
 
                         <Switch
@@ -216,12 +227,14 @@
                             android:id="@+id/checkBox6"
                             style="@style/textGreenBox"
                             android:onClick="checkDay"
-                            android:text="@string/saturday" />
+                            android:text="@string/saturday"
+                            android:textColorHint="@color/design_default_color_on_primary" />
 
                         <EditText
                             android:id="@+id/timeInput6"
                             style="@style/dayListInput"
                             android:autofillHints=""
+                            android:textColorHint="@color/design_default_color_on_primary"
                             tools:ignore="LabelFor" />
 
                         <Switch
@@ -240,12 +253,14 @@
                             android:id="@+id/checkBox7"
                             style="@style/textGreenBox"
                             android:onClick="checkDay"
-                            android:text="@string/sunday" />
+                            android:text="@string/sunday"
+                            android:textColorHint="@color/design_default_color_on_primary" />
 
                         <EditText
                             android:id="@+id/timeInput7"
                             style="@style/dayListInput"
                             android:autofillHints=""
+                            android:textColorHint="@color/design_default_color_on_primary"
                             tools:ignore="LabelFor" />
 
                         <Switch
@@ -280,7 +295,8 @@
                     android:layout_weight="1"
                     android:autofillHints=""
                     android:enabled="true"
-                    android:hint="@string/null_string" />
+                    android:hint="@string/null_string"
+                    android:textColorHint="@color/design_default_color_on_primary" />
             </TableRow>
 
             <TableRow

@@ -11,12 +11,13 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            tools:listitem="@layout/item_energy_meter"
             android:layout_height="0dp"
+            android:padding="10dp"
             app:layout_constraintBottom_toTopOf="@+id/bar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            tools:listitem="@layout/item_energy_meter" />
 
         <LinearLayout
             android:id="@+id/bar"
@@ -24,6 +25,8 @@
             android:layout_height="wrap_content"
             android:gravity="bottom"
             android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -37,7 +40,8 @@
                 android:drawableStart="@drawable/homes_layout_icon"
                 android:text="@string/homes_bar"
                 android:textAllCaps="false"
-                android:textSize="16sp" />
+                android:textColor="@color/green_500"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/energyMeter"
@@ -48,7 +52,8 @@
                 android:drawableStart="@drawable/counter_bar_icon"
                 android:text="@string/counters_bar"
                 android:textAllCaps="false"
-                android:textSize="16sp" />
+                android:textColor="@color/green_500"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/settings"
@@ -59,7 +64,8 @@
                 android:drawableStart="@drawable/settings_bar_icon"
                 android:text="@string/settings"
                 android:textAllCaps="false"
-                android:textSize="16sp" />
+                android:textColor="@color/green_500"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <TextView

@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -130,5 +131,21 @@ class DeviceActivity : AppCompatActivity() {
                 binding.energyConsumption.text = sum.toString().plus(applicationContext.getString(R.string.energy_symbol))
             }
         }
+    }
+
+    fun year(view: View){
+        var temp = binding.energyConsumption.text.toString().toDouble()
+        temp = temp * 4 * 12
+        binding.energyConsumption.text = temp.toString()
+    }
+    fun moth(view : View){
+        var temp = binding.energyConsumption.text.toString().toDouble()
+        temp = temp * 4
+        binding.energyConsumption.text = temp.toString()
+    }
+    fun week(view : View){
+//        var temp = binding.energyConsumption.text.toString().toDouble()
+//        temp = temp / 7.0
+//        binding.energyConsumption.text = temp.toString()
     }
 }

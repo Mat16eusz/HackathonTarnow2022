@@ -16,6 +16,7 @@
             android:layout_height="64dp"
             android:background="@drawable/rounded_background_light_white"
             android:src="@drawable/counter_bar_icon"
+            android:backgroundTint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

@@ -61,6 +61,7 @@
                 android:drawableStart="@drawable/homes_layout_icon"
                 android:text="@string/homes_bar"
                 android:textAllCaps="false"
+                android:textColor="@color/green_500"
                 android:textSize="20sp" />
 
             <Button
@@ -72,6 +73,7 @@
                 android:drawableStart="@drawable/counter_bar_icon"
                 android:text="@string/counters_bar"
                 android:textAllCaps="false"
+                android:textColor="@color/green_500"
                 android:textSize="20sp" />
 
             <Button
@@ -83,6 +85,7 @@
                 android:drawableStart="@drawable/settings_bar_icon"
                 android:text="@string/settings"
                 android:textAllCaps="false"
+                android:textColor="@color/green_500"
                 android:textSize="20sp" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -53,7 +53,9 @@
                     style="@style/dayListInput"
                     android:layout_weight="1"
                     android:autofillHints=""
-                    android:hint="@string/null_string" />
+                    android:enabled="true"
+                    android:hint="@string/null_string"
+                    android:inputType="text" />
             </TableRow>
 
             <TableRow
@@ -264,6 +266,7 @@
                     style="@style/dayListInput"
                     android:layout_weight="1"
                     android:autofillHints=""
+                    android:enabled="true"
                     android:hint="@string/null_string" />
             </TableRow>
 
@@ -283,7 +286,8 @@
                 <EditText
                     android:id="@+id/powerSleepModeInput"
                     style="@style/dayListInput"
-                    android:autofillHints="" />
+                    android:autofillHints=""
+                    android:enabled="true" />
             </TableRow>
         </TableLayout>
 

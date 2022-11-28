@@ -54,11 +54,11 @@ class AddDeviceActivity : BaseActivity() {
         if(arraySwitches?.contains(mySwitch) == true){
             indexID = getIdInt(mySwitch)
             if(mySwitch.isChecked){
-                arrayBoxes?.get(indexID)?.isEnabled = true
+                arrayBoxes?.get(indexID)?.isEnabled = false
                 arrayBoxes?.get(indexID)?.isChecked = true
                 arrayTimeInputs?.get(indexID)?.isEnabled = false
             }else{
-                arrayBoxes?.get(indexID)?.isEnabled = false
+                arrayBoxes?.get(indexID)?.isEnabled = true
                 arrayBoxes?.get(indexID)?.isChecked = false
                 arrayTimeInputs?.get(indexID)?.isEnabled = false
             }
@@ -91,23 +91,6 @@ class AddDeviceActivity : BaseActivity() {
         var myEdit = arrayTimeInputs?.get(myId)
         getId(view)?.let { Log.e("test", it.last().toString()) }
 
-//        if(arrayBoxes?.contains(myBox) == true){
-//            myEdit!!.isEnabled = true
-////            if (myEdit != null) {
-////                if(myBox!!.isChecked){
-////                    if (myEdit != null) {
-////                        sumTime += myEdit.text.toString().toDouble()
-////                    }
-////                }else{
-////                    if (myEdit != null) {
-////                        sumTime -= myEdit.text.toString().toDouble()
-////                    }
-////                }
-////            }
-//        }else{
-//            myEdit!!.isEnabled = false
-//        }
-
         if(arrayBoxes?.contains(myBox) == true){
             if(arrayBoxes?.get(myId)?.isEnabled == arrayTimeInputs?.get(myId)?.isEnabled){
                 arrayTimeInputs?.get(myId)?.isEnabled = !arrayBoxes?.get(myId)?.isEnabled!!
@@ -120,21 +103,6 @@ class AddDeviceActivity : BaseActivity() {
         Log.e("test2", sumTime.toString())
     }
 
-    fun getTimeFromInput(view: View){
-        var myId = getIdInt(view)
-        var myInput = arrayTimeInputs?.get(myId)
-
-        Log.e("test", myId.toString())
-        if (myInput != null) {
-            Log.e("test", myInput.text.toString())
-        }
-        if (myInput != null) {
-            if (myInput.isEnabled) {
-                sumTime += myInput.text.toString().toDouble()
-            }
-        }
-        Log.e("test",sumTime.toString())
-    }
 
     fun getId(view: View): String? {
         return if (view.id == View.NO_ID) "no-id" else view.resources.getResourceName(view.id)

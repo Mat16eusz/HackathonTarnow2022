@@ -68,9 +68,11 @@ class HomeListActivity : BaseActivity() {
         val gson = Gson()
         val typeToken = object : TypeToken<List<DomainHome>>() {}.type
         val homesData = sharedPreferences.getString("HOMES", "defaultName")
-        val domainHomes = gson.fromJson<List<DomainHome>>(homesData, typeToken)
-        if (domainHomes.isNotEmpty()) {
-            homes = domainHomes.toMutableList()
+        if (homesData != "defaultName") {
+            val domainHomes = gson.fromJson<List<DomainHome>>(homesData, typeToken)
+            if (domainHomes.isNotEmpty()) {
+                homes = domainHomes.toMutableList()
+            }
         }
     }
 }

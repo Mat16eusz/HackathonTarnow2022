@@ -89,9 +89,12 @@ class EnergyMeterActivity : BaseActivity() {
         if (result.contents == null) {
             Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
         } else {
-            Toast.makeText(this,
-                "Scanned: " + result.contents,
-                Toast.LENGTH_LONG).show()
+            val energy = DomainEnergyMeter()
+            energy.energy = result.contents
+            meters.add(energy)
+
+            adapter.items = meters
+            saveData(meters)
         }
     }
 }

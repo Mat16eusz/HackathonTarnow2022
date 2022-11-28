@@ -67,12 +67,6 @@ class DeviceActivity : AppCompatActivity() {
             saveData(homes)
         }
 
-        adapter.setOnItemClickListener(object : DeviceAdapter.OnItemClickListener {
-            override fun onItemClick(position: Int) {
-                // TODO:
-            }
-        })
-
         ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
             override fun onMove(
                 recyclerView: RecyclerView,

@@ -11,12 +11,6 @@ import com.example.hackathon2022.domain.DomainDevice
 
 class DeviceAdapter : RecyclerView.Adapter<DeviceAdapter.DeviceViewHolder>() {
 
-    private lateinit var listener: OnItemClickListener
-
-    interface OnItemClickListener {
-        fun onItemClick(position: Int)
-    }
-
     var context: Context? = null
     var items = mutableListOf<DomainDevice>()
         set(value) {
@@ -40,7 +34,7 @@ class DeviceAdapter : RecyclerView.Adapter<DeviceAdapter.DeviceViewHolder>() {
         )
         this.context = parent.context
 
-        return DeviceViewHolder(binding, listener)
+        return DeviceViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: DeviceViewHolder, position: Int) {
@@ -49,7 +43,6 @@ class DeviceAdapter : RecyclerView.Adapter<DeviceAdapter.DeviceViewHolder>() {
 
     inner class DeviceViewHolder(
         private val binding: ItemDeviceBinding,
-        listener: OnItemClickListener,
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: DomainDevice) {
@@ -60,15 +53,5 @@ class DeviceAdapter : RecyclerView.Adapter<DeviceAdapter.DeviceViewHolder>() {
                         context?.getString(R.string.power) + item.power.toString() + "W"
             binding.usagePower.text = usage
         }
-
-        init {
-            itemView.setOnClickListener {
-                listener.onItemClick(adapterPosition)
-            }
-        }
-    }
-
-    fun setOnItemClickListener(listener: OnItemClickListener) {
-        this.listener = listener
     }
 }

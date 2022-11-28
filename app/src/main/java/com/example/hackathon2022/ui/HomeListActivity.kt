@@ -4,7 +4,9 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.hackathon2022.R
 import com.example.hackathon2022.common.base.BaseActivity
 import com.example.hackathon2022.databinding.ActivityHomeListBinding
@@ -62,6 +64,25 @@ class HomeListActivity : BaseActivity() {
                 startActivity(intent)
             }
         })
+
+        ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder,
+            ): Boolean {
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                adapter.items.removeAt(viewHolder.adapterPosition)
+                adapter.notifyItemRemoved(viewHolder.adapterPosition)
+
+                homes = adapter.items
+                saveData(homes)
+            }
+
+        }).attachToRecyclerView(binding.recyclerView)
     }
 
     private fun saveData(listHomes: List<DomainHome>) {

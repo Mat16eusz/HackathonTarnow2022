@@ -34,6 +34,11 @@ class HomeListActivity : BaseActivity() {
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.recyclerView.adapter = adapter
 
+        binding.energyMeter.setOnClickListener {
+            val intent = Intent(this, EnergyMeterActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.addHome.setOnClickListener {
             AddHomeDialog.openDialog(
                 fragmentManager = supportFragmentManager,

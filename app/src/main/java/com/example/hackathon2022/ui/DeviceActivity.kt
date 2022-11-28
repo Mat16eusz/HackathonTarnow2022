@@ -5,7 +5,9 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.hackathon2022.R
 import com.example.hackathon2022.databinding.ActivityDeviceBinding
 import com.example.hackathon2022.domain.DomainDevice
@@ -40,6 +42,15 @@ class DeviceActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val intentDataHome = intent.getStringExtra("HOME")
+        if (intentDataHome != null) {
+            val gson = Gson()
+            val typeToken = object : TypeToken<List<DomainHome>>() {}.type
+            val domainHome = gson.fromJson<List<DomainHome>>(intentDataHome, typeToken)
+
+            saveData(domainHome)
+        }
+
         loadData()
         val sharedPref = getSharedPreferences("PREFERENCE_NAME", MODE_PRIVATE)
         id = sharedPref.getInt("ID", -1)
@@ -61,6 +72,25 @@ class DeviceActivity : AppCompatActivity() {
                 // TODO:
             }
         })
+
+        ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder,
+            ): Boolean {
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                adapter.items.removeAt(viewHolder.adapterPosition)
+                adapter.notifyItemRemoved(viewHolder.adapterPosition)
+
+                homes?.get(id!!)!!.devices = adapter.items
+                saveData(homes.orEmpty())
+            }
+
+        }).attachToRecyclerView(binding.recyclerView)
     }
 
     private fun saveData(listHomes: List<DomainHome>) {

@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hackathon2022.R
 import com.example.hackathon2022.common.base.BaseActivity
 import com.example.hackathon2022.databinding.ActivityHomeListBinding
-import com.example.hackathon2022.domain.DomainDevice
 import com.example.hackathon2022.domain.DomainHome
 import com.example.hackathon2022.ui.dialog.AddHomeDialog
 import com.google.gson.Gson
@@ -21,7 +20,6 @@ class HomeListActivity : BaseActivity() {
         HomesAdapter()
     }
     private var homes = mutableListOf<DomainHome>()
-    private var devices = mutableListOf<DomainDevice>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

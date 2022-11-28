@@ -21,6 +21,6 @@ class SplashScreenActivity : BaseActivity() {
             override fun run() {
                 startActivity(intent)
             }
-        }, 3000)
+        }, 2000)
     }
 }
